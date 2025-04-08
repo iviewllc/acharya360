@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acharya360 - Connect with Your Guru</title>
+  <style>
+    :root {
+      --primary-color: #a5c9ca;
+      --accent-color: #f4a261;
+      --text-dark: #264653;
+      --text-light: #4a4a4a;
+      --bg-light: #f7f9f9;
+      --footer-bg: #2a2a2a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-light);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-color), #b3d5d6);
+      color: var(--text-dark);
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/arches.png');
+      opacity: 0.08;
+      z-index: 0;
+    }
+
+    .logo-container {
+      z-index: 1;
+      margin-bottom: 20px;
+    }
+
+     .logo-container img {
+      height: 240px;
+      width: auto;
+      border-radius: 40px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      z-index: 1;
+    }
+
+    header p {
+      font-size: 1.4em;
+      margin-top: 10px;
+      z-index: 1;
+    }
+
+    .cta-buttons {
+      margin-top: 25px;
+      z-index: 1;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .cta-buttons button {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1em;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease;
+    }
+
+    .cta-buttons button:hover {
+      background-color: #e89651;
+    }
+
+    .app-announcement {
+      margin-top: 40px;
+      padding: 15px 25px;
+      background-color: #ffffff;
+      border-radius: 30px;
+      font-size: 1em;
+      color: var(--text-dark);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      border: 2px solid var(--accent-color);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      z-index: 1;
+    }
+
+    .app-announcement img {
+      height: 32px;
+      width: 32px;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2.4em;
+      color: var(--text-dark);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    section p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      color: var(--text-light);
+    }
+
+    .story-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .story-image {
+      width: 100%;
+      border-radius: 40px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    footer {
+      background-color: var(--footer-bg);
+      color: white;
+      text-align: center;
+      padding: 25px;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-container">
+    <img src="images/mobile-logo.png" alt="Acharya360 Logo">
+  </div>
+  <p>Connecting Ekalavyas to Their Acharyas – Anywhere, Anytime</p>
+  <!--
+  <div class="cta-buttons">
+    <button>Find an Acharya</button>
+    <button>Register as Acharya</button>
+  </div>
+  -->
+  <div class="app-announcement">
+    <!--<img src="images/mobile-app-icon.png" alt="App Icon">-->
+    <span><strong>Android</strong> & <strong>iOS</strong> mobile apps are coming soon!</span>
+  </div>
+</header>
+
+<section>
+  <h2>A Tale of Two Seekers – Ekalavya & Acharya in the Digital Age</h2>
+
+  <div class="story-layout">
+    <img class="story-image" src="images/ekalavya-modern.png" alt="Ekalavya" />
+    <p>
+      In a village far from any formal school, a curious student named Ekalavya yearned to learn a skill. There were no teachers nearby, only videos that taught him bits and pieces. He learned alone, passionately, but always longed for a mentor to guide him.
+    </p>
+  </div>
+
+  <div class="story-layout" style="margin-top: 60px;">
+    <p>
+      Meanwhile, in another town, a skilled teacher—an Acharya—had few students. Though rich in wisdom, his talents remained hidden, unreached.
+    </p>
+    <img class="story-image" src="images/acharya-modern.png" alt="Acharya" />
+  </div>
+
+  <div style="margin-top: 60px;">
+    <p style="text-align: center;">
+      Acharya360 bridges this ancient gap. Just as Ekalavya once learned by observing a distant teacher, today's learners can now connect, interact, and grow under real mentorship—even from miles away.
+    </p>
+    <img class="story-image" src="images/ekalavya-guru-modern.png" alt="Ekalavya and Acharya Story Illustration" style="margin-top: 30px; display: block; margin-left: auto; margin-right: auto;" />
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Acharya360. All rights reserved.
+</footer>
+
+</body>
+</html>

@@ -158,6 +158,17 @@
       padding: 25px;
       font-size: 0.95em;
     }
+
+    @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E38ZC3E2VN"></script>
@@ -191,6 +202,9 @@
     </a>
     <strong><span>coming soon!</span></strong>
   </div>
+  <nav style="position: absolute; bottom: 20px; right: 20px; z-index: 2; animation: fadeInUp 1s ease-in-out;">
+    <a href="#contact" style="background-color: var(--accent-color); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 1em; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">Contact Us</a>
+  </nav>
 </header>
 
 <section>
@@ -221,7 +235,7 @@
   </div>
 </section>
 
-<section>
+<section id="contact">
   <h2>Contact Us</h2>
   <p style="text-align: center; max-width: 700px; margin: 0 auto 40px;">
     We'd love to hear from you! Whether you're an aspiring Ekalavya or a knowledgeable Acharya, reach out to us with your questions or feedback.

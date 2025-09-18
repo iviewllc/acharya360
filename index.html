@@ -16,9 +16,107 @@
       --footer-bg: #2a2a2a;
     }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: var(--bg-light);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-color), #f6d6bc);
+      color: var(--text-dark);
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('../images/cardboard-flat.png');
+      opacity: 0.08;
+      z-index: 0;
+    }
+
+    .logo-container {
+      z-index: 1;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      height: 240px;
+      width: auto;
+      border-radius: 40px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      z-index: 1;
+    }
+
+    header p {
+      font-size: 1.4em;
+      margin-top: 10px;
+      z-index: 1;
+    }
+
+    .cta-buttons {
+      margin-top: 25px;
+      z-index: 1;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .cta-buttons button {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1em;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease;
+    }
+
+    .cta-buttons button:hover {
+      background-color: #e89651;
+    }
+
+    .app-announcement {
+      margin-top: 40px;
+      padding: 15px 25px;
+      background-color: #ffffff;
+      border-radius: 30px;
+      font-size: 1em;
+      color: var(--text-dark);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      border: 2px solid var(--accent-color);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      z-index: 1;
+    }
+
+    .app-announcement img {
+      height: 40px;
+      width: 80px;
+      border-radius: 10px;
     }
 
     section {
@@ -40,6 +138,19 @@
       color: var(--text-light);
     }
 
+    .story-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .story-image {
+      width: 100%;
+      border-radius: 40px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
     footer {
       background-color: var(--footer-bg);
       color: white;
@@ -47,64 +158,103 @@
       padding: 25px;
       font-size: 0.95em;
     }
+
+    @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E38ZC3E2VN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-E38ZC3E2VN');
+  </script>
 </head>
 <body>
 
 <header>
   <div class="logo-container">
-    <img src="images/aacharya360-logo.png" alt="Acharya360 Logo" height="240">
+    <img src="images/aacharya360-logo.png" alt="Acharya360 Logo">
   </div>
   <p>Connecting Ekalavyas to Their Acharyas – Anywhere, Anytime</p>
+  <!--
+  <div class="cta-buttons">
+    <button>Find an Acharya</button>
+    <button>Register as Acharya</button>
+  </div>
+  -->
+  <div class="app-announcement">
+    <a href="#">
+      <img src="images/android-icon.png" alt="Download on Android">
+    </a>
+    <a href="#">
+      <img src="images/ios-icon.png" alt="Download on iOS">
+    </a>
+    <strong><span>coming soon!</span></strong>
+  </div>
+  <nav style="position: absolute; bottom: 20px; right: 20px; z-index: 2; animation: fadeInUp 1s ease-in-out;">
+    <a href="#contact" style="background-color: var(--accent-color); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 1em; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">Contact Us</a>
+  </nav>
 </header>
 
 <section>
   <h2>A Tale of Two Seekers – Ekalavya & Acharya in the Digital Age</h2>
-  <p>... your story content ...</p>
+
+  <div class="story-layout">
+    <img class="story-image" src="images/ekalavya-modern.png" alt="Ekalavya" />
+    <p>
+      In a village far from any formal school, a curious student named Ekalavya yearned to learn a skill. There were no teachers nearby, only videos that taught him bits and pieces. He learned alone, passionately, but always longed for a mentor to guide him.
+    </p>
+  </div>
+
+  <div class="story-layout" style="margin-top: 60px;">
+    <p>
+      Meanwhile, in another town, a skilled teacher—an Acharya—had few students. Though rich in wisdom, his talents remained hidden, unreached.
+    </p>
+    <img class="story-image" src="images/acharya-modern.png" alt="Acharya" />
+  </div>
+
+  <div style="margin-top: 60px;">
+    <p style="text-align: center;">
+      <span style="font-size: 3em; font-weight: bold; color: #e76f51; font-family: 'Tangerine', cursive;">
+        Aacharya 360
+      </span>
+      bridges this ancient gap. Just as Ekalavya once learned by observing a distant teacher, today's learners can now connect, interact, and grow under real mentorship—even from miles away.
+    </p>
+    <img class="story-image" src="images/ekalavya-guru-modern.png" alt="Ekalavya and Acharya Story Illustration" style="margin-top: 30px; display: block; margin-left: auto; margin-right: auto;" />
+  </div>
 </section>
 
 <section id="contact">
   <h2>Contact Us</h2>
-  <p>We'd love to hear from you! Reach out to us with your questions or feedback.</p>
-  <p style="text-align: center; margin-top: 20px;">
-    📧 Email: <a href="mailto:admin@iview-global.com" style="color: var(--accent-color);">admin@iview-global.com</a>
+  <p style="text-align: center; max-width: 700px; margin: 0 auto 40px;">
+    We'd love to hear from you! Whether you're an aspiring Ekalavya or a knowledgeable Acharya, reach out to us with your questions or feedback.
+  </p>
+  <form id="contact-form" style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
+    <input type="hidden" name="title" id="title" value="Feedback">
+    <input type="text" id="name" name="name" placeholder="Your Name" required style="padding: 12px; border-radius: 8px; border: 1px solid #ccc;">
+    <input type="email" id="email" name="email" placeholder="Your Email" required style="padding: 12px; border-radius: 8px; border: 1px solid #ccc;">
+    <textarea id="message" name="message" placeholder="Your Message" rows="5" required style="padding: 12px; border-radius: 8px; border: 1px solid #ccc;"></textarea>
+    <button type="submit" style="background-color: var(--accent-color); color: white; border: none; padding: 12px; border-radius: 25px; font-size: 1em; cursor: pointer;">Send Message</button>
+  </form>
+
+  <p style="text-align: center; margin-top: 30px; color: var(--text-dark);">
+    📧 Email us at <a href="mailto:admin@iview-global.com" style="color: var(--accent-color); text-decoration: none; font-weight: bold;">admin@iview-global.com</a>
   </p>
 </section>
-
-<!-- ✅ Privacy Policy Section -->
-<section id="privacy">
-  <h2>Privacy Policy</h2>
-  <p><strong>Last Updated:</strong> February 2025</p>
-
-  <p>Welcome to <strong>Aacharya360</strong>. Your privacy is important to us. This policy explains how we collect, use, and protect your information when you use our app.</p>
-
-  <h3>1. Information We Collect</h3>
-  <ul>
-    <li>Name, email, password (via Firebase Authentication)</li>
-    <li>Profile details such as avatar, bio, spoken languages</li>
-    <li>Availability schedules and requests</li>
-    <li>Device information such as notification tokens</li>
-  </ul>
-
-  <h3>2. How We Use Your Information</h3>
-  <p>We use this data for account login, profile matching, scheduling, sending notifications, and improving app performance.</p>
-
-  <h3>3. Data Sharing</h3>
-  <p>We do not sell or share your personal data with advertisers. Your data is only processed through trusted services like Google Firebase.</p>
-
-  <h3>4. Security</h3>
-  <p>All data is stored securely in Firebase. Passwords are encrypted and never stored directly.</p>
-
-  <h3>5. Your Rights</h3>
-  <p>You may request access, correction, or deletion of your data by contacting us.</p>
-
-  <h3>6. Contact</h3>
-  <p>If you have questions about this Privacy Policy, email us at <a href="mailto:admin@iview-global.com" style="color: var(--accent-color);">admin@iview-global.com</a>.</p>
-</section>
-
+<script src="js/script.js"></script>
 <footer>
-  &copy; 2025 Aacharya360. All rights reserved. |
-  <a href="#privacy" style="color: #f4a261; text-decoration: none;">Privacy Policy</a>
+  &copy; 2025 Aacharya360. All rights reserved.
 </footer>
 
 </body>
